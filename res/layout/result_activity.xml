@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ededed">
+
+    <LinearLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:background="@android:color/transparent"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/error_title"
+            android:textSize="11pt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oops" />
+
+        <TextView
+            android:id="@+id/error_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9pt"
+            android:layout_marginTop="5dp"
+            android:text="@string/default_error" />
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/retry"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/progress_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/result_layout_container"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sample_product_name"
+                android:textSize="11pt"
+                android:maxLines="2" />
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sample_company_name"
+                android:textSize="9pt"
+                android:maxLines="2" />
+
+            <TextView
+                android:id="@+id/barcode_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sample_barcode"
+                android:textColor="#777777"
+                android:textSize="8pt" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:layout_marginTop="15dp"
+                android:background="#cacaca">
+
+                <ImageView
+                    android:id="@+id/veganism_result_drawable"
+                    android:src="@drawable/custom_is_vegan"
+                    android:layout_width="50dp"
+                    android:layout_height="20pt"
+                    android:contentDescription="@string/product_image_placeholder" />
+
+                <TextView
+                    android:id="@+id/veganism_result"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/product_is_vegan"
+                    android:gravity="center"
+                    android:textSize="10pt" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <!-- Alternatives -->
+    <ListView
+        android:id="@+id/alternative_list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+    />
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:baselineAligned="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+                android:id="@+id/report_vegan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:layout_margin="5dp"
+                android:text="@string/report_vegan"/>
+
+        <Button
+                android:id="@+id/report_not_vegan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:text="@string/report_not_vegan"/>
+
+    </LinearLayout>
+</LinearLayout>

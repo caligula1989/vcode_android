@@ -1,0 +1,34 @@
+# view AndroidManifest.xml #generated:58
+-keep class il.org.free.vcode.android.view.CaptureActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:168
+-keep class il.org.free.vcode.android.HelpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:102
+-keep class il.org.free.vcode.android.PreferencesActivity { <init>(...); }
+
+# view ldpi/res/layout-ldpi/capture.xml #generated:23
+# view res/layout/capture.xml #generated:23
+-keep class il.org.free.vcode.android.view.ViewfinderView { <init>(...); }
+
+# view AndroidManifest.xml #generated:125
+-keep class il.org.free.vcode.android.book.SearchBookContentsActivity { <init>(...); }
+
+# view res/layout/search_book_contents_list_item.xml #generated:17
+-keep class il.org.free.vcode.android.book.SearchBookContentsListItem { <init>(...); }
+
+# view AndroidManifest.xml #generated:106
+-keep class il.org.free.vcode.android.encode.EncodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:143
+-keep class il.org.free.vcode.android.history.HistoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:159
+-keep class il.org.free.vcode.android.share.AppPickerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:151
+-keep class il.org.free.vcode.android.share.BookmarkPickerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:135
+-keep class il.org.free.vcode.android.share.ShareActivity { <init>(...); }
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+    <string name="app_name">VCode</string>
+    <string name="msg_camera_framework_bug">אנו מצטערים. מצלמת המכשיר נתקלה בשגיאה. ייתכן שתאלצו להדליק את מכשירכם מחדש.</string>
+    <string name="msg_default_status">הניחו את הברקוד בתוך המרובע.</string>
+
+    <!-- New codes for VCode -->
+    <string name="product_is_vegan">המוצר טבעוני</string>
+    <string name="product_is_not_vegan">המוצר לא טבעוני</string>
+    <string name="product_is_unknown">אין מידע על המוצר</string>
+    <string name="checking_product">בודק מוצר</string>
+    <string name="report_vegan">דווח כטבעוני</string>
+    <string name="report_not_vegan">דווח כלא טבעוני</string>
+    <string name="alternatives">תחליפים</string>
+    <string name="product_image_placeholder">תמונת מוצר</string>
+    <string name="network_error">אין קישוריות אינטרנט</string>
+    <string name="no_internet_connection">אינכם מחוברים לאינטרנט. אנא התחברו ונסו שנית.</string>
+    <string name="error">שגיאה</string>
+    <string name="sample_barcode">552224411435</string>
+    <string name="sample_product_name">שם המוצר</string>
+    <string name="sample_company_name">שם החברה</string>
+    <string name="add_product_name">שם</string>
+    <string name="ok">אוקיי</string>
+    <string name="cancel">ביטול</string>
+    <string name="product_details">פרטי המוצר</string>
+    <string name="company_name">חברה</string>
+    <string name="oops">אופס!</string>
+    <string name="default_error">התרחשה שגיאה</string>
+    <string name="retry">נסה שנית</string>
+</resources>
