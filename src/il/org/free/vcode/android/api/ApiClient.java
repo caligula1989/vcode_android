@@ -16,6 +16,7 @@ import il.org.free.vcode.android.api.listeners.ProductCheckCallback;
 import il.org.free.vcode.android.api.listeners.ProductReportCallback;
 import il.org.free.vcode.android.data.Product;
 import il.org.free.vcode.android.utils.NetworkUtil;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -42,7 +43,7 @@ import java.util.List;
  */
 public class ApiClient {
 
-    public static final String WEBSERVICE = "http://INSTALLATION_URL/";
+    public static final String WEBSERVICE = "http://vegansite.net/vcode/";
     public static final String CHECK_BARCODE = "?controller=Products&action=check&id=";
     public static final String REPORT_PRODUCT = "?controller=Products&action=report";
 
@@ -68,12 +69,15 @@ public class ApiClient {
         Bundle args = new Bundle();
         args.putInt(OPERATION_ID, OPERATION_PRODUCT_CHECK);
         args.putString(ARG_BARCODE, barcode);
-        if(NetworkUtil.connectionPresent(context)){
-            new ApiCall().execute(args);
+        if(!NumberUtils.isNumber(barcode)){
+            mProductCheckCallback.onApiError(ErrorCodes.INVALID_BARCODE, context.getString(R.string.invalid_barcode));
             return;
         }
-        mProductCheckCallback.onApiError(ErrorCodes.NO_NETWORK, context.getString(R.string.no_internet_connection));
-
+        if(!NetworkUtil.connectionPresent(context)){
+            mProductCheckCallback.onApiError(ErrorCodes.NO_NETWORK, context.getString(R.string.no_internet_connection));
+            return;
+        }
+        new ApiCall().execute(args);
     }
     public static void reportProductAsync(Context context, Product product, ProductReportCallback callback){
         mProductReportCallback = callback;
@@ -147,6 +151,7 @@ public class ApiClient {
         StringBuilder path = new StringBuilder(WEBSERVICE);
         path.append(REPORT_PRODUCT);
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        nameValuePairs.add(new BasicNameValuePair(Product.COMPANY, product.getCompany()));
         nameValuePairs.add(new BasicNameValuePair(Product.BARCODE, product.getBarcode()));
         nameValuePairs.add(new BasicNameValuePair(Product.NAME, product.getName()));
         nameValuePairs.add(new BasicNameValuePair(Product.VEGAN, String.valueOf(product.getVegan())));

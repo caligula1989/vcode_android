@@ -66,6 +66,7 @@ public class Product implements Cloneable, Serializable {
         obj.setId(getId());
         obj.setBarcode(getBarcode());
         obj.setName(getName());
+        obj.setCompany(getCompany());
         obj.setVegan(getVegan());
         obj.setIsavApproved(getIsavApproved());
         return obj;

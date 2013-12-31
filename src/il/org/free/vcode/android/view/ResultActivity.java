@@ -105,7 +105,7 @@ public class ResultActivity extends Activity
         if(product == null){
             productClone = new Product();
             productClone.setBarcode(barcode);
-            productClone.setVegan(itemClicked == R.id.report_vegan ? 1 : 0);
+            productClone.setVegan(itemClicked == R.id.report_vegan ? IS_VEGAN : IS_NOT_VEGAN);
             // Show dialog to ask for product name
             showNameInputDialog(productClone);
             return;
@@ -131,14 +131,12 @@ public class ResultActivity extends Activity
         alertBuilder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 product.setName(name.getText().toString());
+                product.setCompany(company.getText().toString());
                 ApiClient.reportProductAsync(ResultActivity.this, product, ResultActivity.this);
-                return;
             }
         });
         alertBuilder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                return;
-            }
+            public void onClick(DialogInterface dialog, int which) {}
         });
         alertBuilder.show();
     }
