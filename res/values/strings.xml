@@ -42,4 +42,5 @@
     <string name="oops">Oops!</string>
     <string name="default_error">An error has occured</string>
     <string name="retry">Retry</string>
+    <string name="invalid_barcode">invalid_barcode</string>
 </resources>

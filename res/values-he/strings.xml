@@ -28,4 +28,5 @@
     <string name="oops">אופס!</string>
     <string name="default_error">התרחשה שגיאה</string>
     <string name="retry">נסה שנית</string>
+    <string name="invalid_barcode">ברקוד לא תקין</string>
 </resources>
